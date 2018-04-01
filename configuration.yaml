@@ -1,0 +1,23 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8998
+  adminConnectors:
+    - type: http
+      port: 8999
+
+database:
+  driverClass : org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5439/docker
+  properties:
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  user: docker
+  password: docker
+  maxWaitForConnection: 1s
+  validationQuery: "Select 1"
+  validationQueryTimeout: 1s
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  evictionInterval: 10s
+  minIdleTime: 1 minute
